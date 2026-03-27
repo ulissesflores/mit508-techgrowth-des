@@ -1,0 +1,47 @@
+{
+  "experiment": "TechGrowth DES — Pipeline Kafka→Flink→Iceberg",
+  "author": "Carlos Ulisses Flores",
+  "orcid": "0000-0002-6034-7765",
+  "course": "MIT-508 — Data Platform Engineering (AGTU)",
+  "timestamp": "2026-03-26T22:03:52.213389",
+  "python_version": "3.10+",
+  "dependencies": {
+    "simpy": "4.1.1",
+    "numpy": "1.26+",
+    "matplotlib": "3.8+",
+    "scipy": "1.12+"
+  },
+  "metrics": {
+    "total_events": 191317,
+    "sla_target_ms": 300000.0,
+    "sla_compliance_pct": 100.0,
+    "p50_latency_ms": 1218.9060339005882,
+    "p95_latency_ms": 2504.783963564753,
+    "p99_latency_ms": 2764.122934589489,
+    "max_latency_ms": 3687.7826306725565,
+    "mean_latency_ms": 1216.8983357867558,
+    "std_latency_ms": 815.4024886934126,
+    "partitions_injected": 2,
+    "events_during_partition": 58,
+    "sla_compliance_during_partition_pct": 100.0,
+    "p99_during_partition_ms": 3205.9584102925696,
+    "little_law_L": 7058.010347563183,
+    "config": {
+      "seed": 42,
+      "sim_duration_ms": 60000,
+      "nominal_rate_eps": 578.0,
+      "burst_rate_eps": 5800.0,
+      "num_cells": 10,
+      "consumers_per_cell": 14,
+      "partition_enabled": true
+    }
+  },
+  "references": {
+    "little_law": "Little, J. D. C. (1961). DOI: 10.1287/opre.9.3.383",
+    "pacelc": "Abadi, D. J. (2012). DOI: 10.1109/MC.2012.33",
+    "kafka_exactly_once": "Wang et al. (2021). DOI: 10.1145/3448016.3457556",
+    "tail_latency": "Dean & Barroso (2013). DOI: 10.1145/2408776.2408794",
+    "shuffle_sharding": "MacCárthaigh (2019). AWS Builders' Library",
+    "cell_architecture": "AWS (2024). Well-Architected Framework"
+  }
+}
