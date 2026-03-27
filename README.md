@@ -3,7 +3,7 @@
 **Pipeline Kafka → Flink → Iceberg com Injeção de Partições de Rede (PACELC)**
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19244059.svg)](https://doi.org/10.5281/zenodo.19244059)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ulissesflores/mit508-techgrowth-des/blob/main/colab/TechGrowth_DES.ipynb)
 
@@ -162,7 +162,7 @@ Se utilizar este software em sua pesquisa, cite usando os metadados em [CITATION
                Pipeline with PACELC Network Partition Injection},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.XXXXXXX},
+  doi       = {10.5281/zenodo.19244059},
   url       = {https://github.com/ulissesflores/mit508-techgrowth-des}
 }
 ```
