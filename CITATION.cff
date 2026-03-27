@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Flores"
+    given-names: "Carlos Ulisses"
+    orcid: "https://orcid.org/0000-0002-6034-7765"
+    website: "https://ulissesflores.com"
+title: "TechGrowth DES: Stochastic Simulation of Kafka-Flink-Iceberg Pipeline with PACELC Network Partition Injection"
+version: 1.0.0
+date-released: 2026-03-27
+url: "https://github.com/ulissesflores/mit508-techgrowth-des"
+license: Apache-2.0
+keywords:
+  - e-commerce
+  - simulation
+  - simpy
+  - discrete-event-simulation
+  - cell-based-architecture
+  - shuffle-sharding
+  - queueing-theory
+  - little-law
+  - pacelc
+  - data-lakehouse
+  - kafka
+  - flink
+  - iceberg
