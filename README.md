@@ -13,15 +13,15 @@
 
 ## Contexto Acadêmico
 
-| Campo | Valor |
-|-------|-------|
-| **Disciplina** | MIT-508 — Data Platform Engineering |
-| **Instituição** | American Global Tech University (AGTU) |
-| **Programa** | Mestrado em Inteligência Artificial |
-| **Professor** | Dr. Emerson Rodolfo Abraham |
-| **Autor** | Carlos Ulisses Flores |
-| **ORCID** | [0000-0002-6034-7765](https://orcid.org/0000-0002-6034-7765) |
-| **Data** | Março de 2026 |
+| Campo           | Valor                                                        |
+| --------------- | ------------------------------------------------------------ |
+| **Disciplina**  | MIT-508 — Data Platform Engineering                          |
+| **Instituição** | American Global Tech University (AGTU)                       |
+| **Programa**    | Mestrado em Inteligência Artificial                          |
+| **Professor**   | Dr. Emerson Rodolfo Abraham                                  |
+| **Autor**       | Carlos Ulisses Flores                                        |
+| **ORCID**       | [0000-0002-6034-7765](https://orcid.org/0000-0002-6034-7765) |
+| **Data**        | Março de 2026                                                |
 
 Este repositório contém os artefatos de validação experimental do estudo de caso **TechGrowth** — uma empresa de e-commerce em hipercrescimento cuja arquitetura de dados é modernizada via *Data Lakehouse* (Apache Iceberg), Arquitetura Kappa (Kafka + Flink) e *Cell-Based Architecture* com *shuffle sharding*.
 
@@ -47,7 +47,10 @@ A simulação modela:
 
 Para λ = 5.800 eps e tempo de serviço médio W ≈ 23 ms, cada consumer processa ~43 eps. Com 140 consumers totais, a capacidade é ~6.090 eps → ρ ≈ 0,95 durante burst. O sistema é estável (ρ < 1) com queuing visível — trade-off intencional para demonstrar dinâmica de filas.
 
+
+
 ---
+
 
 ## Estrutura do Repositório
 
@@ -67,6 +70,13 @@ mit508-techgrowth-des/
 │   └── main.py                 # Ponto de entrada
 ├── colab/
 │   └── TechGrowth_DES.ipynb    # Notebook Google Colab auto-contido
+├── docs/
+│   ├── appendix/
+│   │   ├── Appendix_A_TechGrowth.docx
+│   │   └── Appendix_A_TechGrowth.pdf
+│   └── paper/
+│       ├── TechGrowth_Final.docx
+│       └── TechGrowth_Final.pdf
 ├── output/                     # Artefatos gerados pela simulação
 │   └── .gitkeep
 └── tests/
@@ -107,32 +117,38 @@ docker run -v $(pwd)/output:/app/output techgrowth-des
 
 A simulação produz 6 figuras em formato de publicação (300 dpi, Times New Roman, legendas em português):
 
-| Figura | Descrição |
-|--------|-----------|
+| Figura    | Descrição                                            |
+| --------- | ---------------------------------------------------- |
 | **Fig 1** | Latência end-to-end ao longo do tempo (escala log Y) |
-| **Fig 2** | ECDF de latência com marcação de SLA (5 min) |
-| **Fig 3** | Consumer lag do Kafka com Lei de Little (L = λW) |
-| **Fig 4** | Throughput efetivo vs. taxa de chegada |
-| **Fig 5** | Violin plot de latência por célula (★ = partição) |
-| **Fig 6** | Impacto PACELC: box plot + conformidade SLA |
+| **Fig 2** | ECDF de latência com marcação de SLA (5 min)         |
+| **Fig 3** | Consumer lag do Kafka com Lei de Little (L = λW)     |
+| **Fig 4** | Throughput efetivo vs. taxa de chegada               |
+| **Fig 5** | Violin plot de latência por célula (★ = partição)    |
+| **Fig 6** | Impacto PACELC: box plot + conformidade SLA          |
 
 ---
 
 ## Parâmetros do Experimento
 
-| Parâmetro | Valor | Justificativa |
-|-----------|-------|---------------|
-| Seed | 42 | Reprodutibilidade determinística |
-| Duração | 60s | Captura transição nominal→burst→nominal |
-| Taxa nominal | 578 eps | 50M eventos/dia ÷ 86.400s |
-| Taxa burst | 5.800 eps | 10× nominal (Black Friday) |
-| Janela burst | 15s–45s | 30s de estresse sustentado |
-| Células | 10 | Cell-Based Architecture |
-| Consumers/célula | 14 | ρ ≈ 0,95 durante burst (via Lei de Little) |
-| SLA alvo | 300.000 ms | 5 minutos |
-| Partições PACELC | ~1/30s, 2s | Validação empírica do teorema |
+| Parâmetro        | Valor      | Justificativa                              |
+| ---------------- | ---------- | ------------------------------------------ |
+| Seed             | 42         | Reprodutibilidade determinística           |
+| Duração          | 60s        | Captura transição nominal→burst→nominal    |
+| Taxa nominal     | 578 eps    | 50M eventos/dia ÷ 86.400s                  |
+| Taxa burst       | 5.800 eps  | 10× nominal (Black Friday)                 |
+| Janela burst     | 15s–45s    | 30s de estresse sustentado                 |
+| Células          | 10         | Cell-Based Architecture                    |
+| Consumers/célula | 14         | ρ ≈ 0,95 durante burst (via Lei de Little) |
+| SLA alvo         | 300.000 ms | 5 minutos                                  |
+| Partições PACELC | ~1/30s, 2s | Validação empírica do teorema              |
 
 ---
+
+
+
+> [!NOTE]
+>
+> Este repositório hospeda o material suplementar reprodutível do estudo, incluindo o apêndice metodológico em `docs/appendix/`, o artigo final em `docs/paper/` e os artefatos experimentais em `output/`, todos preservados em release versionada com DOI.
 
 ## Referências
 
